@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Gradient Box Shadow</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #000;
+        }
+        .shadow{
+            position: relative;
+            margin: 200px auto 0;
+            width: 400px;
+            height: 250px;
+            background: linear-gradient(0deg, #000, #262626);
+        }
+        .shadow::before,
+        .shadow::after{
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            background: linear-gradient(45deg, #fb0094, #00ff00, #ffff00, #ff0000, 
+            #fb0094, #00ff00, #ffff00, #ff0000);
+            background-size: 400%;
+            width: calc(100% + 5px);
+            height: calc(100% + 5px);
+            z-index: -1;
+            animation: animate 20s linear infinite;
+        }
+        .shadow::after{
+            filter: blur(30px);
+        }
+        @keyframes animate{
+            0%{
+                background-position: 0 0;
+            }
+            50%{
+                background-position: 400% 0;
+            }
+            100%{
+                background-position: 0 0;
+            }
+            
+        }
+        .name{
+            font-size: 50px;
+            color: #fff;
+            text-align: center;
+        }
+        .title{
+            font-size: 20px;
+            color: rgb(240, 235, 235);
+            font-style: italic;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="shadow">
+        <h1 class="name">A.I Asad</h1>
+        <h3 class="title">Software developer</h3>
+    </div>    
+</body>
+</html>

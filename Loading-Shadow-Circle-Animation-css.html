@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Loading Animation</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .circle{
+            position: absolute;
+            width: 33px;
+            height: 33px;
+            background: transparent;
+            border-radius: 50%;
+            box-shadow: 30px 30px 0 #2ecc71,
+                        -30px 30px 0 #e67e22,
+                        30px -30px 0 #1f8104,
+                        -30px -30px 0 rgb(22, 233, 201),
+                        0px -45px 0 rgb(247, 10, 10),
+                        0px 45px 0 rgb(42, 20, 244),
+                        45px 0 0 rgb(242, 11, 200),
+                        -45px 0 0 rgb(115, 255, 0);
+            animation: animate 3s infinite;
+        }
+        @keyframes animate{
+            0%{
+            box-shadow: 0px 0px 0 #2ecc71,
+                        0px 0px 0 #e67e22,
+                        0px 0px 0 #1f8104,
+                        0px 0px 0 rgb(22, 233, 201),
+                        0px 0px 0 rgb(247, 10, 10),
+                        0px 0px 0 rgb(42, 20, 244),
+                        0px 0 0 rgb(242, 11, 200),
+                        0px 0 0 rgb(115, 255, 0);
+            transform: rotate(0deg);
+            }
+            25%{
+            box-shadow: 30px 30px 0 #2ecc71,
+                        -30px 30px 0 #e67e22,
+                        30px -30px 0 #1f8104,
+                        -30px -30px 0 rgb(22, 233, 201),
+                        0px -45px 0 rgb(247, 10, 10),
+                        0px 45px 0 rgb(42, 20, 244),
+                        45px 0 0 rgb(242, 11, 200),
+                        -45px 0 0 rgb(115, 255, 0);
+            transform: rotate(360deg);
+            }
+            75%{
+            box-shadow: 30px 30px 0 #2ecc71,
+                        -30px 30px 0 #e67e22,
+                        30px -30px 0 #1f8104,
+                        -30px -30px 0 rgb(22, 233, 201),
+                        0px -45px 0 rgb(247, 10, 10),
+                        0px 45px 0 rgb(42, 20, 244),
+                        45px 0 0 rgb(242, 11, 200),
+                        -45px 0 0 rgb(115, 255, 0);
+            transform: rotate(720deg);
+            }
+            100%{
+            box-shadow: 0px 0px 0 #2ecc71,
+                        0px 0px 0 #e67e22,
+                        0px 0px 0 #1f8104,
+                        0px 0px 0 rgb(22, 233, 201),
+                        0px 0px 0 rgb(247, 10, 10),
+                        0px 0px 0 rgb(42, 20, 244),
+                        0px 0 0 rgb(242, 11, 200),
+                        0px 0 0 rgb(115, 255, 0);
+            transform: rotate(1440deg);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="circle"></div>
+    </div>
+</body>
+</html>
